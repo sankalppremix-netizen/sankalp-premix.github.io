@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us – Tea Premix</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p class="lead">We’re here to help! Reach out for bulk orders, business inquiries, collaboration or general questions.</p>
+
+    <div class="card">
+      <h2 style="margin-top:0">Send Us a Message</h2>
+      <form id="contactForm" >
+        <form id="contactForm">
+        <label > Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="example@email.com" required>
+        <label>Your Contact Number</label>
+        <input type="text" name="phone" placeholder="Your contact number" required>
+        <label>Message</label>
+        <textarea name="message" placeholder="How can we help you?" required></textarea>
+  <button type="submit" class="btn">Send</button>
+</form>
+
+      </form>
+      <p id="response"></p>
+
+        <!-- EmailJS SDK -->
+          <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+          <script src="mail.js"></script>
+    </div>
+
+    <div class="info-box card">
+       <!-- Logo HTML -->
+        <div class="logo-circle">
+          <img src="logo.jpg" alt="Logo" />
+        </div>
+      <h2 style="margin-top:0">Contact Information</h2>
+      <div class="row">
+        <div>
+          <p class="item-title">📞 Phone</p>
+          <p class="text-muted">+91 73877 06855</p>
+        </div>
+        <div>
+          <p class="item-title">📧 Email</p>
+          <p class="text-muted">sankalppremix@gmail.com</p>
+        </div>
+        <div>
+          <p class="item-title">📍 Address</p>
+          <p class="text-muted">Tea Premix India, Pune, Maharashtra</p>
+        </div>
+        <div>
+          <p class="item-title">🕒 Business Hours</p>
+          <p class="text-muted">Mon–Sat: 10 AM – 7 PM</p>
+        </div>
+        <!-- WhatsApp QR Code HTML -->
+      <div class="qr-box">
+      <img src="QR.jpg" alt="WhatsApp QR" />
+      <p>Scan to Contact on WhatsApp</p>
+      </div>
+      </div>
+    </div>
+    
+    <footer style="margin-top: 25px; text-align:center; color:var(--muted); font-size:13px;">
+      © <span id="year"></span> Tea Premix India • All Rights Reserved
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

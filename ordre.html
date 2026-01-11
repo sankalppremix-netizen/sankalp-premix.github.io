@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Products</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+
+<div class="order-container">
+
+    <h1>Sankalp Premix</h1>
+
+    <!-- Product Box -->
+    <div class="product-box">
+        <h2>Select Product</h2>
+
+        <label>Product Name</label>
+        <select id="product" onchange="updatePrice()">
+            <option value="">-- Select Product --</option>
+            <option value="Cardamom Tea">Cardamom Tea</option>
+            <option value="Masala Tea">Masala Tea</option>
+            <option value="Ginger Tea">Ginger Tea</option>
+            <option value="Lemon Tea">Lemon Tea</option>
+            <option value="Lemongrass Tea">Lemongrass Tea</option>
+            <option value="Jaggery Tea">Jaggery Tea</option>
+            <option value="Kulhad Tea">Kulhad Tea</option>
+            <option value="Chocolate Tea">Chocolate Tea</option>
+            <option value="Chocolate Coffee">Chocolate Coffee</option>
+            <option value="Cappuccino">Cappuccino</option>
+            <option value="Basundi Sugar Tea">Basundi Sugar Tea</option>
+            <option value="Basundi Jaggery Tea">Basundi Jaggery Tea</option>
+            <option value="Sugar Coffee">Sugar Coffee</option>
+            <option value="Strawberry Tea">Strawberry Tea</option>
+            <option value="Sugar Tea">Sugar Tea</option>
+            <option value="Black Tea">Black Tea</option>
+            <option value="Black Coffee">Black Coffee</option>
+            <option value="Green Tea">Green Tea</option>
+            <option value="Vanilla Coffee">Vanilla Coffee</option>
+            <option value="Diet Coffee">Diet Coffee</option>
+            <option value="Vanilla Tea">Vanilla Tea</option>
+            <option value="Diet Tea">Diet Tea</option>
+            <option value="Honey Tea">Honey Tea</option>
+            <option value="Honey Lemon Tea">Honey Lemon Tea</option>
+
+        </select>
+
+        <label>Package Size</label>
+        <select id="package" onchange="updatePrice()">
+            <option value="">-- Select Package --</option>
+            <option value="1">1 Kg</option>
+            <option value="0.7">500 g</option>
+            <option value="0.4">250 g</option>
+        </select>
+
+        <label>Quantity</label>
+        <input type="number" id="quantity" value="1" min="1" onchange="updatePrice()">
+    </div>
+
+    
+    <!-- Customer Details -->
+    <div class="customer-box">
+        <h2>Customer Details</h2>
+
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name"required>
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter your email"required>
+
+        <label>Mobile Number</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number"required>
+
+        <label>Address</label>
+        <input type="text" id="Address" placeholder="Enter your proper address"required>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary-box">
+        <h2>Order Summary</h2>
+        <p>Product: <span id="summaryProduct">-</span></p>
+        <p>Package: <span id="summaryPackage">-</span></p>
+        <p>Quantity: <span id="summaryQty">-</span></p>
+        <hr>
+        <p class="total">Total Price: ₹<span id="total">0</span></p>
+    </div>
+    <!-- Popup -->
+<div id="orderPopup" class="popup-overlay">
+    <div class="popup-box">
+        <h2>Order Placed Successfully</h2>
+        <p>
+            Your order has been placed successfully.<br><br>
+            Our team will contact you shortly for payment and order confirmation.
+        </p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
+<button onclick="sendOrderEmail()" onclick="showPopup()" class="pay-btn">Place Order</button>
+    
+</div>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("nVvn4FKbDM55dmEb8"); // replace with your public key
+})();
+</script>
+
+<script src="order.js"></script>
+</body>
+</html>
